@@ -113,7 +113,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
+  var totalProduct = 1;
+  var stringNums = testArray[0]; //eslint-disable-line
 
+  for(var i = 0; i < testArray.length; i++){
+    totalProduct = multiply(testArray[i],totalProduct)[0];
+    //console.log(testArray[i]);
+    //console.log(totalSum);
+  }
+  for (var j = 1; j < testArray.length; j++){
+    stringNums = (stringNums + ',' + testArray[j]);
+    //console.log(stringNums);
+  }
+  return [totalProduct,('The numbers ' + stringNums + ' have a product of ' + totalProduct + '.')];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
